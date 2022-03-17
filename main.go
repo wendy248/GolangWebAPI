@@ -15,6 +15,7 @@ func main() {
 	// })
 
 	r.GET("/home", handler.HomeHandler)
-	r.GET("/item", handler.QueryFull)
+	r.GET("/item", handler.QueryFull) //Nomor 1 filosofi kopi
+	r.GET("/id/:number", handler.IDProduct)
 	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
