@@ -8,7 +8,7 @@ import (
 
 func HomeHandler(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
-		"message": "this is home page",
+		"message": "this is file home.go",
 		"status":  "oke",
 	})
 }
