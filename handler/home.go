@@ -14,7 +14,7 @@ func HomeHandler(c *gin.Context) {
 }
 
 func ProductInformation(c *gin.Context) {
-	id := c.Param("a") //query Param
+	id := c.Param("halo") //query Param
 
 	c.JSON(http.StatusOK, gin.H{
 		"messages": "keterangan barang",
