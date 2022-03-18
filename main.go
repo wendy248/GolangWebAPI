@@ -18,8 +18,7 @@ func main() {
 	r.GET("/item", handler.QueryFull) //Nomor 1 filosofi kopi
 	r.GET("/id/:number/product", handler.IDProduct)
 
-	// r.GET("/id/:halo", handler.ProductInformation)
-	// r.GET("/id/", handler.ProductInformationByName)
+	r.GET("/productInfo/:nama/:id/:harga", handler.ProductInformation)
 
 	r.GET("/stock", handler.Quantity)
 	r.GET("/QuantyStock/:name", handler.PriceStock)

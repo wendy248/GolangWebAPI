@@ -14,19 +14,14 @@ func HomeHandler(c *gin.Context) {
 }
 
 func ProductInformation(c *gin.Context) {
-	id := c.Param("halo") //query Param
-
-	c.JSON(http.StatusOK, gin.H{
-		"messages": "keterangan barang",
-		"id":       id,
-	})
-}
-
-func ProductInformationByName(c *gin.Context) {
 	name := c.Param("nama")
+	id := c.Param("id") //query Param
+	price := c.Param("harga")
 
 	c.JSON(http.StatusOK, gin.H{
-		"messages":     "keterangan barang",
-		"product name": name,
+		"messages":     "Ini function ProductInformation",
+		"Product name": name,
+		"id":           id,
+		"Price":        price,
 	})
 }
