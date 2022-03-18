@@ -12,3 +12,21 @@ func HomeHandler(c *gin.Context) {
 		"status":  "oke",
 	})
 }
+
+func ProductInformation(c *gin.Context) {
+	id := c.Param("a") //query Param
+
+	c.JSON(http.StatusOK, gin.H{
+		"messages": "keterangan barang",
+		"id":       id,
+	})
+}
+
+func ProductInformationByName(c *gin.Context) {
+	name := c.Param("nama")
+
+	c.JSON(http.StatusOK, gin.H{
+		"messages":     "keterangan barang",
+		"product name": name,
+	})
+}
