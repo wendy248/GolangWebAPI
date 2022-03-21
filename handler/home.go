@@ -13,15 +13,11 @@ func HomeHandler(c *gin.Context) {
 	})
 }
 
-func ProductInformation(c *gin.Context) {
+func UserInformation(c *gin.Context) {
 	name := c.Param("nama")
 	id := c.Param("id") //query Param
-	price := c.Param("harga")
+	city := c.Param("kota")
 
-	c.JSON(http.StatusOK, gin.H{
-		"messages":     "Ini function ProductInformation",
-		"Product name": name,
-		"id":           id,
-		"Price":        price,
-	})
+	salam := "Hai " + name + " dengan id : " + id + ". Anda berasal dari " + city + "."
+	c.String(http.StatusOK, salam)
 }

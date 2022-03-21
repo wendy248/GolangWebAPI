@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func QueryFull(c *gin.Context) {
+func PriceCheck(c *gin.Context) {
 	title := c.Query("judul")
 	price := c.Query("harga")
 
@@ -19,7 +19,7 @@ func QueryFull(c *gin.Context) {
 	})
 }
 
-func IDProduct(c *gin.Context) {
+func PriceCheckFull(c *gin.Context) {
 	number := c.Param("number")
 	name := c.Query("name")
 	price := c.Query("price")
@@ -32,26 +32,32 @@ func IDProduct(c *gin.Context) {
 	})
 }
 
-func PriceStock(c *gin.Context) {
+func ProductCondition(c *gin.Context) {
 	name := c.Param("name")
+	cond := c.Param("kondisi")
 	price := c.Query("harga")
 	stock := c.Query("jumlah")
 
 	c.JSON(http.StatusOK, gin.H{
-		"Messages":     "Ini adalah function PriceStock",
+		"Messages":     "Ini adalah function ProductCondition",
 		"Product name": name,
+		"Condition":    cond,
 		"Price":        price,
 		"Stock":        stock,
 	})
 }
 
-func Quantity(c *gin.Context) {
+func ProductQuantity(c *gin.Context) {
 	title := c.Query("nama")
 	quanty := c.Query("jumlah")
+	pos := c.Query("tempat")
 
-	c.JSON(http.StatusOK, gin.H{
-		"Messages":  "Ini adalah jumlah stok barang",
-		"Item name": title,
-		"Quantity":  quanty,
-	})
+	message := "Stok dari " + title + " berjumlah " + quanty + ". Semuanya ada di " + pos
+
+	c.String(http.StatusOK, message)
+	// c.JSON(http.StatusOK, gin.H{
+	// 	"Messages":  "Ini adalah jumlah stok barang",
+	// 	"Item name": title,
+	// 	"Quantity":  quanty,
+	// })
 }
