@@ -31,6 +31,6 @@ func main() {
 	//localhost:8080/QuantyStock/baju/bekas?harga=1000&jumlah=100
 	r.GET("/QuantyStock/:name/:kondisi", handler.ProductCondition)
 
-	// r.POST("/mahasiswa", handler.MahasiswaHandler)
+	r.POST("/biodata", handler.BiodataHandler)
 	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
