@@ -36,7 +36,7 @@ func BiodataHandler(c *gin.Context) {
 
 	c.JSON(http.StatusOK, gin.H{
 		"Message":      "Berhasil input data",
-		"Time":         time.Now(),
+		"Waktu Input":         time.Now(),
 		"Nama":         biodataInput.Nama,
 		"Umur":         biodataInput.Umur,
 		"Domisili":     biodataInput.Domisili,
