@@ -22,7 +22,6 @@ func BiodataHandler(c *gin.Context) {
 
 	err := c.ShouldBindJSON(&biodataInput)
 	if err != nil {
-		fmt.Println(err)
 		errorMessages := []string{}
 		for _, e := range err.(validator.ValidationErrors) {
 			errorMessage := fmt.Sprintf("Error %s, message: %s", e.Field(), e.ActualTag())
